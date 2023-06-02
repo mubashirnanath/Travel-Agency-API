@@ -1,8 +1,9 @@
 import { Router } from "express";
-import {addBanner} from '../controllers/bannerController'
+import {addBanner, deleteBanner, editBanner, getAllBanners} from '../controllers/bannerController'
 
 const router:Router = Router()
 
-router.route('/').post(addBanner)
+router.route('/').get(getAllBanners).post(addBanner)
+router.route('/:id').delete(deleteBanner).put(editBanner)
 
 export default router
