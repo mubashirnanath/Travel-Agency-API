@@ -1,10 +1,13 @@
 import express,{ Application } from "express";
+import dotenv from 'dotenv'
+import connection from "./config/connection";
+import bannerRouter from "./routes/bannerRouter";
+dotenv.config()
 
 const app:Application = express()
-
-app.get('/',(req,res)=>{
-    res.send('hello')
-})
+connection;
+app.use(express.json())
+app.use('/api/banner',bannerRouter)
 const port :number = 8080
 app.listen(port,()=>{
     console.log('server running successfully');
