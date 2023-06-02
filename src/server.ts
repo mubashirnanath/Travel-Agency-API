@@ -2,6 +2,7 @@ import express,{ Application } from "express";
 import dotenv from 'dotenv'
 import connection from "./config/connection";
 import bannerRouter from "./routes/bannerRouter";
+import aboutRouter from "./routes/aboutRouter";
 dotenv.config()
 
 const app:Application = express()
@@ -10,6 +11,7 @@ app.use(express.json())
 
 
 app.use('/api/banner',bannerRouter)
+app.use('/api/about',aboutRouter)
 
 
 const port :number = 5000

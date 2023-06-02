@@ -1,15 +1,20 @@
 import { Schema, model } from "mongoose";
 
 // representing a document in mongodb
-interface IBanner {
+interface IAbout {
   title:string,
+  description:string,
   image:string
 }
 
 // Define the schema for the Banner collection
-const bannerSchema = new Schema<IBanner>(
+const aboutSchema = new Schema<IAbout>(
     {
         title:{
+            type:String,
+            required:true
+        },
+        description:{
             type:String,
             required:true
         },
@@ -17,10 +22,9 @@ const bannerSchema = new Schema<IBanner>(
             type:String,
             required:true
         }
-    },
-    {
+    },{
         timestamps:true
     }
 )
 
-export default model<IBanner>('Banner', bannerSchema);
+export default model<IAbout>('About', aboutSchema);
