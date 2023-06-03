@@ -13,6 +13,8 @@ export const getAllBanners = asyncHandler(async (req: Request, res: Response) =>
 //@route POST /api/banner
 export const addBanner = asyncHandler(async (req: Request, res: Response) => {
   const {image,title} = req.body;
+  console.log(req.body);
+  
   if(!title && !image){
     throw new Error('image or title field missing')
   }

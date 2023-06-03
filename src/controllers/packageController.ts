@@ -26,7 +26,7 @@ export const addPackages = asyncHandler(async(req:Request,res:Response)=>{
     res.status(201).json(result)
 })
 
-//@desc Edit a Package
+//@desc Update a Package
 //@route PUT /api/package/:id
 export const editPackage = asyncHandler(async(req:Request,res:Response)=>{
     const {id} = req.params

@@ -1,6 +1,7 @@
 import {model,Schema} from 'mongoose'
 
 interface IPackage {
+    dest_id:string,
     location:string,
     price:number,
     description:string,
@@ -28,6 +29,10 @@ interface ITourPlan {
   });
 const packageSchema = new Schema<IPackage>(
     {
+        dest_id:{
+            type:String,
+            required:true,
+        },
         location:{
             type:String,
             required:true,

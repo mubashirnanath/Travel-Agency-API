@@ -4,6 +4,7 @@ import connection from "./config/connection";
 import bannerRouter from "./routes/bannerRouter";
 import aboutRouter from "./routes/aboutRouter";
 import packageRouter from "./routes/packageRouter";
+import destinationRouter from "./routes/destinationRouter";
 dotenv.config()
 
 const app:Application = express()
@@ -13,6 +14,7 @@ app.use(express.json())
 
 app.use('/api/banner',bannerRouter)
 app.use('/api/about',aboutRouter)
+app.use('/api/destination',destinationRouter)
 app.use('/api/package',packageRouter)
 
 
